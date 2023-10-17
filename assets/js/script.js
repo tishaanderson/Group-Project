@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const apiKey = '2563b3155a0747ec8b0c5c273a182aff'; // Replace with your actual API key
+const apiKey = '2563b3155a0747ec8b0c5c273a182aff';
 const query = 'pasta';
 const cuisine = 'Italian';
 
