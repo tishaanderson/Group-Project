@@ -18,13 +18,34 @@ function searchRecipes(event) {
 
       recipes.forEach((recipe) => {
         console.log(recipe);
+
         const recipeDiv = document.createElement("div");
-        recipeDiv.textContent = recipe.title;
+        recipeDiv.classList.add("card");
+
+        const recipeImg = document.createElement("div");
+        recipeImg.classList.add("card-img");
+
+        const recipeTitle = document.createElement("span");
+        recipeTitle.classList.add("card-title");
+
+        const recipeContent = document.createElement("div");
+        recipeContent.classList.add("card-content");
+
+        recipeTitle.textContent = recipe.title;
+        
+        const imgSrc = document.createElement("img");
+        imgSrc.src = recipe.image;
+
         recipeDiv.addEventListener("click", function(event) {
             event.preventDefault();
             searchActualRecipe(recipe.id)
         });
         recipeResults.appendChild(recipeDiv);
+        recipeDiv.appendChild(recipeImg);
+        
+        recipeImg.appendChild(recipeTitle);
+        recipeImg.appendChild(imgSrc);
+        recipeTitle.appendChild(recipeContent);
       });
     })
     .catch((error) => {
@@ -46,47 +67,5 @@ function searchActualRecipe(recipeID) {
       console.error("An error occurred:", error);
     });
 }
-
-function searchRecipes(event) {
-  event.preventDefault();
-  query = textBox.value;
-  const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${query}&cuisine=${cuisine}`;
-  fetch(url)
-    .then(function (response) {
-      return response.json();
-    })
-    .then((responseData) => {
-      const recipes = responseData.results;
-
-      recipes.forEach((recipe) => {
-        console.log(recipe);
-        const recipeDiv = document.createElement("div");
-        
-        
-        const imageElement = document.createElement("img");
-        imageElement.src = recipe.image;
-        imageElement.alt = recipe.title;
-
-       
-        const titleElement = document.createElement("p");
-        titleElement.textContent = recipe.title;
-
-      
-        recipeDiv.appendChild(imageElement);
-        recipeDiv.appendChild(titleElement);
-
-        recipeDiv.addEventListener("click", function(event) {
-          event.preventDefault();
-          searchActualRecipe(recipe.id);
-        });
-
-        recipeResults.appendChild(recipeDiv);
-      });
-    })
-    .catch((error) => {
-      console.error("An error occurred:", error);
-    });
-}
-
 
 searchButton.addEventListener("click", searchRecipes);
