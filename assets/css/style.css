@@ -1,0 +1,61 @@
+
+header{
+    background: url('../image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1000px;
+
+}
+@media screen and (max-width: 1480px){
+    header{
+        background-size: cover;
+        height: 550px;
+
+    }
+}
+@media screen and (max-width: 1024px){
+    header{
+        background-size: cover;
+        height: 400px;
+
+    }
+}
+@media screen and (max-width: 768px){
+    header{
+        background-size: cover;
+        height: 350px;
+
+    }
+}
+@media screen and (max-width: 425px){
+    header{
+        background-size: cover;
+        height: 200px;
+
+    }
+}
+@media screen and (max-width: 375px){
+    header{
+        background-size: cover;
+        height: 150px;
+
+    }
+}
+
+.search-form{
+    margin-left: 10px;
+}
+
+body{
+    background-color: #122c34;
+}
+
+.card{
+    background-color: #f1ebe4;
+    margin: 10px;
+}
+
+.card-img{
+    margin: 10px;
+}
