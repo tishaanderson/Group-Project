@@ -6,56 +6,28 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <title>Recipe Search</title>
+    <title>Taste Buds Unite</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 <body>
+
+  <header>
+    <!-- image in css file -->
+  </header>
     <nav>
         <div class="nav-wrapper teal darken-4">
-          <a href="#" class="brand-logo center">Recipe search</a>
-          <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">one</a></li>
-            <li><a href="#!">two</a></li>
-            <li class="divider"></li>
-            <li><a href="#!">three</a></li>
-          </ul>
-  
-          <ul class="right hide-on-med-and-down">
-            <!-- Dropdown Trigger -->
-            <li>
-              <a class="dropdown-trigger" href="#!" data-target="dropdown1"
-                >Cuisines
-                <i class="material-icons right">arrow_drop_down</i>
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-trigger" href="#!" data-target="dropdown1"
-                >Wines
-                <i class="material-icons right">arrow_drop_down</i>
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-trigger" href="#!" data-target="dropdown1"
-                >Cocktails
-                <i class="material-icons right">arrow_drop_down</i>
-              </a>
-            </li>
-          </ul>
-          <form>
-            <div class="input-field left">
-              <input id="searchButton" type="search" required>
-              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-              <i class="material-icons">close</i>
-            </div>
+            <a href="#" class="brand-logo center">Match your Dinner and Drinks!!</a>
+            <form class="search-form left">
+                <div class="input-field text">
+                    <input id="textBox" type="text" placeholder="Search Recipes">
+                </div>
           </form>
+          <button id="searchButton" class="btn waves-effect waves-light" type="submit" style="display: inline-block;">Search</button> <br>
+
         </div>
       </nav>
-    <h1>Recipe Search</h1>
-    <input id= "textBox" type="text"/>
-    <button id="searchButton">Search Recipes</button>
-    <div id="recipeResults">
-
-    </div>
-
+    
+    <div id="recipeResults"></div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>  

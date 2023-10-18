@@ -1,7 +1,7 @@
 const searchButton = document.querySelector("#searchButton");
 const recipeResults = document.querySelector("#recipeResults");
 const textBox = document.querySelector("#textBox");
-const apiKey = "2563b3155a0747ec8b0c5c273a182aff";
+const apiKey = "a1db763ce0894faf95a8510b5764d7ae";
 let query = "pasta";
 let cuisine = "Italian";
 
@@ -18,13 +18,46 @@ function searchRecipes(event) {
 
       recipes.forEach((recipe) => {
         console.log(recipe);
+
         const recipeDiv = document.createElement("div");
-        recipeDiv.textContent = recipe.title;
+        recipeDiv.classList.add("card");
+
+        const recipeImg = document.createElement("div");
+        recipeImg.classList.add("card-img");
+
+        const recipeTitle = document.createElement("span");
+        recipeTitle.classList.add("card-title");
+
+        const recipeContent = document.createElement("div");
+        recipeContent.classList.add("card-content");
+        
+
+        recipeTitle.textContent = recipe.title;
+        
+        const imgSrc = document.createElement("img");
+        imgSrc.src = recipe.image;
+
+        //added button, still need help with redirecting
+        const button = document.createElement("a");
+        button.classList.add("btn", "waves-effect", "waves-light");
+        button.textContent = "View Recipe";
+        button.href = 'recipe.html';
+
+
         recipeDiv.addEventListener("click", function(event) {
             event.preventDefault();
             searchActualRecipe(recipe.id)
         });
         recipeResults.appendChild(recipeDiv);
+        recipeDiv.appendChild(recipeImg);
+        
+        recipeContent.appendChild(button);
+
+
+        recipeImg.appendChild(recipeTitle);
+        recipeImg.appendChild(imgSrc);
+        recipeTitle.appendChild(recipeContent);
+        
       });
     })
     .catch((error) => {
