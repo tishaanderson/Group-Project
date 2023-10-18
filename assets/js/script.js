@@ -1,9 +1,11 @@
+
 const searchButton = document.querySelector("#searchButton");
 const recipeResults = document.querySelector("#recipeResults");
 const textBox = document.querySelector("#textBox");
-const apiKey = "a1db763ce0894faf95a8510b5764d7ae";
+const apiKey = "2563b3155a0747ec8b0c5c273a182aff";
 let query = "pasta";
 let cuisine = "Italian";
+
 
 function searchRecipes(event) {
   event.preventDefault();
@@ -33,7 +35,6 @@ function searchRecipes(event) {
         
 
         recipeTitle.textContent = recipe.title;
-        
         const imgSrc = document.createElement("img");
         imgSrc.src = recipe.image;
 
