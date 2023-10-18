@@ -1,12 +1,11 @@
 
-
 header{
     background: url('../image.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 1000px;
-    
+
 }
 @media screen and (max-width: 1480px){
     header{
@@ -54,4 +53,9 @@ body{
 
 .card{
     background-color: #f1ebe4;
+    margin: 10px;
+}
+
+.card-img{
+    margin: 10px;
 }
