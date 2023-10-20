@@ -2,13 +2,14 @@
 const searchButton = document.querySelector("#searchButton");
 const recipeResults = document.querySelector("#recipeResults");
 const textBox = document.querySelector("#textBox");
-const apiKey = "2563b3155a0747ec8b0c5c273a182aff";
+const apiKey = "a1db763ce0894faf95a8510b5764d7ae";
 let query = "pasta";
 let cuisine = "Italian";
 
 
 function searchRecipes(event) {
   event.preventDefault();
+  recipeResults.innerHTML = '';
   query = textBox.value;
   const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${query}&cuisine=${cuisine}`;
   fetch(url)

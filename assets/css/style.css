@@ -1,11 +1,10 @@
 
 header{
-    background: url('../image.jpg');
+    background: url('../image.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 1000px;
-
 }
 @media screen and (max-width: 1480px){
     header{
