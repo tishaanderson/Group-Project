@@ -9,6 +9,7 @@ let cuisine = "Italian";
 
 function searchRecipes(event) {
   event.preventDefault();
+  recipeResults.innerHTML = '';
   query = textBox.value;
   const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${query}&cuisine=${cuisine}`;
   fetch(url)
