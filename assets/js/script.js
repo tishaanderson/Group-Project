@@ -28,6 +28,8 @@ function searchRecipes(event) {
         const recipeImg = document.createElement("div");
         recipeImg.classList.add("card-img");
 
+        //recipeImg.setAttribute("id", recipe.id)
+
         const recipeTitle = document.createElement("span");
         recipeTitle.classList.add("card-title");
 
@@ -38,6 +40,8 @@ function searchRecipes(event) {
         recipeTitle.textContent = recipe.title;
         const imgSrc = document.createElement("img");
         imgSrc.src = recipe.image;
+
+        
 
         //added button, still need help with redirecting
         const button = document.createElement("a");
@@ -76,6 +80,10 @@ function searchActualRecipe(recipeID) {
     .then((responseData) => {
       const recipe = responseData;
         console.log(recipe)
+        var detailsDiv = document.getElementById(recipeID)
+        console.log(detailsDiv)
+        window.open(recipe.spoonacularSourceUrl, "_blank")
+        
     })
     .catch((error) => {
       console.error("An error occurred:", error);
