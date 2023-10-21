@@ -53,8 +53,16 @@ body{
 .card{
     background-color: #f1ebe4;
     margin: 10px;
+    width: 25%;
+    border: solid;
+    border-color: goldenrod;
+    border-radius: 10px;
+    display: flex;
 }
 
 .card-img{
     margin: 10px;
+    flex: 1;
+    overflow: hidden;
+    text-align: center;
 }

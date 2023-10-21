@@ -15,20 +15,29 @@
   <header>
     <!-- image in css file -->
   </header>
-    <nav>
-        <div class="nav-wrapper teal darken-4">
-            <a href="#" class="brand-logo center">Match your Dinner and Drinks!!</a>
-            <form class="search-form left">
-                <div class="input-field text">
-                    <input id="textBox" type="text" placeholder="Search Recipes">
-                </div>
-          </form>
-          <button id="searchButton" class="btn waves-effect waves-light" type="submit" style="display: inline-block;">Search</button> <br>
 
-        </div>
-      </nav>
+  <nav>
+    <div class="nav-wrapper teal darken-4">
+      <a href="#" class="brand-logo center">Match your Dinner and Drinks!!</a>
+      <form class="search-form left">
+      <div class="input-field text">
+      <input id="textBox" type="text" placeholder="Search Recipes">
+      </div>
+      </form>
+      <button id="searchButton" class="btn waves-effect waves-light" type="submit" style="display: inline-block;">Search</button> <br>
+    </div>
+  </nav>
 
-    <div id="recipeResults"></div>
+  <main style="display: inline-block; width: 80%;">
+    <section>
+     <div id="recipeResults" style="display: flex; flex-wrap: wrap; justify-content: center;"></div>
+    </section>
+  </main>
+
+  <aside style="display: inline-block; width: 15%; vertical-align: top; color: white; text-align: center; border: solid; border-width: 3px; margin: 10px;" id="search-history">
+    <h5>Previous Searches:</h5>
+    <ul id="keyword-list"></ul>
+  </aside>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>  
