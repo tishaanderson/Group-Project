@@ -11,7 +11,8 @@ window.addEventListener("load", loadSearchHistory);
 
 function updateSearchHistory(keyword) {
   const listItem = document.createElement("li");
-  listItem.textContent = keyword;
+  const uppercaseKeyword = keyword.toUpperCase();
+  listItem.textContent = uppercaseKeyword;
   searchHistory.appendChild(listItem);
 }
 
