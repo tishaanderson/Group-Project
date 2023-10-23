@@ -19,6 +19,15 @@ header{
 
     }
 }
+/* @media screen and (max-width: 978px){
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+    }
+} */
 @media screen and (max-width: 768px){
     header{
         background-size: cover;
@@ -55,23 +64,36 @@ body{
 .card{
     background-color: #f1ebe4;
     margin: 10px;
+    border: solid;
+    border-color: goldenrod;
+    border-radius: 10px;
+    display: flex;
 }
+
 
 .card-img{
     margin: 10px;
+    flex: 1;
+    overflow: hidden;
+    text-align: center;
 }
 
 .cuisineOptions{
     position: absolute;
-    top: 5px;
-    left: 270px;
+    top: 9.5px;
+    left: 175px;
    
 }
 
 .mealType{
     position: absolute;
-    top: 5px;
-    left: 450px;
+    top: 9.5px;
+    left: 340px;
    
 }
 
+#searchButton{
+    position: absolute;
+    top: 15px;
+    left: 525px;
+}

@@ -5,6 +5,7 @@ const searchHistory = document.querySelector("#keyword-list");
 const cuisines = document.querySelector("#cuisineOptions");
 const mealType = document.querySelector("#mealType");
 
+
 const apiKey = "a1db763ce0894faf95a8510b5764d7ae";
 let query = "text";
 let cuisine = "text";
@@ -20,6 +21,16 @@ function updateSearchHistory(keyword) {
   listItem.textContent = uppercaseKeyword;
   searchHistory.appendChild(listItem);
   
+}
+
+//adding function to save previous searched keywords and from previous visits to the page
+window.addEventListener("load", loadSearchHistory);
+
+function updateSearchHistory(keyword) {
+  const listItem = document.createElement("li");
+  const uppercaseKeyword = keyword.toUpperCase();
+  listItem.textContent = uppercaseKeyword;
+  searchHistory.appendChild(listItem);
 }
 
 
@@ -81,13 +92,14 @@ function searchRecipes(event) {
         recipeImg.appendChild(recipeTitle);
         recipeImg.appendChild(imgSrc);
         recipeTitle.appendChild(recipeContent);
-        
       });
+
+
       updateSearchHistory(query);
 
-      const keywords = JSON.parse(localStorage.getItem("searchKeywords")) || [];
-      keywords.push(query);
-      localStorage.setItem("searchKeywords", JSON.stringify(keywords));
+        const keywords = JSON.parse(localStorage.getItem("searchKeywords")) || [];
+        keywords.push(query);
+        localStorage.setItem("searchKeywords", JSON.stringify(keywords));
     })
     .catch((error) => {
       console.error("An error occurred:", error);
