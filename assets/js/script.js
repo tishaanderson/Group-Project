@@ -1,17 +1,36 @@
-
 const searchButton = document.querySelector("#searchButton");
 const recipeResults = document.querySelector("#recipeResults");
 const textBox = document.querySelector("#textBox");
+const searchHistory = document.querySelector("#keyword-list");
+const cuisines = document.querySelector("#cuisineOptions");
+const mealType = document.querySelector("#mealType");
+
 const apiKey = "a1db763ce0894faf95a8510b5764d7ae";
-let query = "pasta";
-let cuisine = "Italian";
+let query = "text";
+let cuisine = "text";
+
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('select');
+  var instances = M.FormSelect.init(elems);
+});
+
+function updateSearchHistory(keyword) {
+  const listItem = document.createElement("li");
+  const uppercaseKeyword = keyword.toUpperCase();
+  listItem.textContent = uppercaseKeyword;
+  searchHistory.appendChild(listItem);
+  
+}
 
 
 function searchRecipes(event) {
   event.preventDefault();
   recipeResults.innerHTML = '';
   query = textBox.value;
-  const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${query}&cuisine=${cuisine}`;
+  cuisine = cuisines.value
+  type = mealType.value
+  console.log(cuisines)
+  const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${query}&cuisine=${cuisine}&type=${type}`;
   fetch(url)
     .then(function (response) {
       return response.json();
@@ -28,6 +47,8 @@ function searchRecipes(event) {
         const recipeImg = document.createElement("div");
         recipeImg.classList.add("card-img");
 
+        //recipeImg.setAttribute("id", recipe.id)
+
         const recipeTitle = document.createElement("span");
         recipeTitle.classList.add("card-title");
 
@@ -39,11 +60,12 @@ function searchRecipes(event) {
         const imgSrc = document.createElement("img");
         imgSrc.src = recipe.image;
 
+        
+
         //added button, still need help with redirecting
         const button = document.createElement("a");
         button.classList.add("btn", "waves-effect", "waves-light");
         button.textContent = "View Recipe";
-        button.href = 'recipe.html';
 
 
         recipeDiv.addEventListener("click", function(event) {
@@ -61,10 +83,22 @@ function searchRecipes(event) {
         recipeTitle.appendChild(recipeContent);
         
       });
+      updateSearchHistory(query);
+
+      const keywords = JSON.parse(localStorage.getItem("searchKeywords")) || [];
+      keywords.push(query);
+      localStorage.setItem("searchKeywords", JSON.stringify(keywords));
     })
     .catch((error) => {
       console.error("An error occurred:", error);
     });
+}
+
+function loadSearchHistory() {
+  const keywords = JSON.parse(localStorage.getItem("searchKeywords")) || [];
+  keywords.forEach((keyword) => {
+    updateSearchHistory(keyword);
+  });
 }
 
 function searchActualRecipe(recipeID) {
@@ -76,6 +110,10 @@ function searchActualRecipe(recipeID) {
     .then((responseData) => {
       const recipe = responseData;
         console.log(recipe)
+        var detailsDiv = document.getElementById(recipeID)
+        console.log(detailsDiv)
+        window.open(recipe.spoonacularSourceUrl, "_blank")
+        
     })
     .catch((error) => {
       console.error("An error occurred:", error);
@@ -83,3 +121,4 @@ function searchActualRecipe(recipeID) {
 }
 
 searchButton.addEventListener("click", searchRecipes);
+

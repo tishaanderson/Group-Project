@@ -1,4 +1,3 @@
-
 header{
     background: url('../image.jpeg');
     background-size: cover;
@@ -48,7 +47,10 @@ header{
 
 body{
     background-color: #122c34;
+    color:#122c34;
 }
+
+
 
 .card{
     background-color: #f1ebe4;
@@ -58,3 +60,18 @@ body{
 .card-img{
     margin: 10px;
 }
+
+.cuisineOptions{
+    position: absolute;
+    top: 5px;
+    left: 270px;
+   
+}
+
+.mealType{
+    position: absolute;
+    top: 5px;
+    left: 450px;
+   
+}
+
