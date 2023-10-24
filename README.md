@@ -14,28 +14,22 @@ SO THAT I can create a more diverse meal prep
 
 #### Acceptance Criteria
 
-I WANT the application to provide a user-friendly interface for selecting a main meal.
-SO THAT users can effortlessly choose their preferred dish.
-I WANT the application to use a CSS framework other than Bootstrap for styling.
-SO THAT the design is unique and tailored to the application's needs.
-I WANT the application to be deployed to GitHub Pages.
-SO THAT users can easily access and use the application online.
-I WANT the application to be interactive, responding to user input in real-time.
-SO THAT users can see pairings as they make selections.
-I WANT the application to utilize at least two server-side APIs.
-SO THAT it can access a variety of meal, wine, or cocktail information for pairing suggestions.
-I WANT the application to use modals for user interactions and avoid using alerts, confirms, or prompts.
-SO THAT the user experience is more seamless and visually appealing.
-I WANT the application to use client-side storage to store persistent data.
-SO THAT users can access and manage their preferences and view recently selected pairings.
-I WANT the application to be responsive and adapt to different devices and screen sizes.
-SO THAT users can access it on various platforms without issues.
-I WANT the application to have a polished and aesthetically pleasing user interface.
-SO THAT it offers an appealing and user-friendly experience.
-I WANT the GitHub repository to meet quality coding standards, including file structure, naming conventions, indentation, and quality comments.
-SO THAT the codebase is organized and maintainable.
-I WANT the project to have a comprehensive README with a unique name, description, technologies used, a screenshot of the application, and a link to the deployed application on GitHub Pages.
-SO THAT users and potential contributors can easily understand and access the project.
+```
+GIVEN I am the primary cook for the household
+WHEN I open the app
+THEN I see a search bar where I can enter the main ingredient or type of food I want to cook
+WHEN I enter a main ingredient or food type
+THEN the app provides me with a list of meal ideas based on my input and saves my search history
+WHEN I review the meal ideas
+THEN I can select one that interests me
+WHEN I select a meal idea
+THEN I receive detailed information about that meal, including the recipe
+WHEN I explore multiple meal ideas
+THEN I can mix up our weekly meals with fresh ingredients and diverse recipes
+WHEN I use the app
+THEN I can enhance my meal prep by trying new and diverse recipes
+```
+
 
 ##### Links
 
@@ -48,7 +42,10 @@ https://github.com/tishaanderson/Group-Project
 
 ###### APIs
 
-https://developer.edamam.com/edamam-recipe-api
+https://spoonacular.com/food-api/docs
+
+https://developers.giphy.com/docs/api/#quick-start-guide
+
 
 
 
