@@ -21,8 +21,10 @@
       <!-- image in css file -->
     </header>
     <nav>
-      <div class="nav-wrapper teal darken-4">
-        <form style="width: 150px"class="search-form left" id="searchForm">
+
+      <div class="nav-wrapper teal darken-3 ">
+        <form style="width: 150px"class="search-form left">
+
           <div class="input-field text">
             <input id="textBox" type="text" placeholder="Search Recipes" />
           </div>
@@ -89,17 +91,78 @@
             <option value="drink">Drink</option>
           </select>
         </div>
+
+        <div style="width:200px" class="input-field wineType">
+          <select id="wineType">
+            <option value="" disabled selected>Choose a Wine Type</option>
+              <optgroup label="White Wine">
+                <optgroup label="Dry White Wine">
+                  <option value="assyrtiko">Assyrtiko</option>
+                  <option value="moschofilero">Moschofilero</option>
+                  <option value="muscadet">Muscadet</option>
+                  <option value="viognier">Viognier</option>
+                  <option value="verdicchio">Verdicchio</option>
+                  <option value="white_burgundy">White Burgundy</option>
+                  <option value="chardonnay">Chardonnay</option>
+                  <option value="gruener_veltliner">Gruener Veltliner</option>
+                  <option value="frascati">Frascati</option>
+                  <option value="gavi">Gavi</option>
+                  <option value="trebbiano">Trebbiano</option>
+                  <option value="sauvignon_blanc">Sauvignon Blanc</option>
+                  <option value="albarino">Albarino</option>
+                  <option value="verdejo">Verdejo</option>
+                  <option value="vermentino">Vermentino</option>
+                  <option value="pinot_grigio">Pinot Grigio</option>
+                </optgroup>
+                <option value="gewurztraminer">Gewurztraminer</option>
+                <option value="chenin_blanc">Chenin Blanc</option>
+                <option value="riesling">Riesling</option>
+              </optgroup>
+              <optgroup label="Red Wine">
+                <optgroup label="Dry Red Wine">
+                  <option value="zweigelt">Zweigelt</option>
+                  <option value="barbera_wine">Barbera Wine</option>
+                  <option value="primitivo">Primitivo</option>
+                  <option value="pinot_noir">Pinot Noir</option>
+                  <option value="nebbiolo">Nebbiolo</option>
+                  <option value="red_burgundy">Red Burgundy</option>
+                  <option value="rioja">Rioja</option>
+                  <option value="grenache">Grenache</option>
+                  <option value="malbec">Malbec</option>
+                  <option value="zinfandel">Zinfandel</option>
+                  <option value="sangiovese">Sangiovese</option>
+                  <option value="cabernet_sauvignon">Cabernet Sauvignon</option>
+                  <option value="tempranillo">Tempranillo</option>
+                  <option value="shiraz">Shiraz</option>
+                  <option value="merlot">Merlot</option>
+                  <option value="nero_d_avola">Nero d Avola</option>
+                </optgroup>
+                <option value="bordeaux">Bordeaux</option>
+                <option value="gamay">Gamay</option>
+                <option value="pinotage">Pinotage</option>
+                <option value="agiorgitiko">Agiorgitiko</option>
+              </optgroup>
+              <optgroup label="Dessert Wine">
+                <option value="moscato">Moscato</option>
+              <optgroup label="Sparkling Wine">
+                <option value="champagne">Champagne</option>
+              </optgroup>
+          </select>
+        </div>
       </div>
     </nav>
 
+    
+
     <main style="display: inline-block; width: 80%;">
       <section>
+        <div id="wineResults" ></div>
        <div id="recipeResults" style="display: flex; flex-wrap: wrap; justify-content: center;"></div>
       </section>
       <div id="gifs"></div>
     </main>
 
-    <aside style="display: inline-block; width: 15%; vertical-align: top; color: ivory; text-align: center; border: solid; border-width: 4px; margin: 10px; border-color: rgb(227, 207, 156); border-radius: 10px;" id="search-history">
+    <aside id="search-history">
       <h5 style="color: ivory;">Previous Searches:</h5>
       <ul id="keyword-list" style="font-size: 20px;"></ul>
     </aside>
