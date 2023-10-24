@@ -1,25 +1,21 @@
-# Group-Project (First SMU Group Project)
+# Taste Buds Unite (First SMU Group Project)
 
 ## Description
 
-We are creating a food and drink application. We want the user to be able to select which main meal they are preparing and the webpage would populate ideas of which wine/cocktails would pair-well with that meal.
+We're building an app where users can enter the main ingredient or the type of food they want to make. Once they do that, the app will show them a list of meal ideas they can cook with that ingredient or cuisine in mind.
 
 ### User Story
 
 ```
-AS A dinner party host/hostess
-I WANT to pair a cocktail that will go well with my main recipe
-SO THAT I can corridinate drink and food recipes accordingly
+AS THE primary cook for the household
+I WANT to find ways to mix our weekly meals up with fresh ingredients
+SO THAT I can create a more diverse meal prep
 ```
 
 #### Acceptance Criteria
 
 I WANT the application to provide a user-friendly interface for selecting a main meal.
-SO THAT dinner party hosts or hostesses can effortlessly choose their preferred dish.
-I WANT the application to generate suggested wine or cocktail pairings based on the selected main meal.
-SO THAT users can receive expert recommendations for the perfect beverage to complement their chosen dish.
-I WANT the suggested pairings to include a name, brief description, and potentially an image for each wine or cocktail.
-SO THAT users have all the information they need to make informed choices.
+SO THAT users can effortlessly choose their preferred dish.
 I WANT the application to use a CSS framework other than Bootstrap for styling.
 SO THAT the design is unique and tailored to the application's needs.
 I WANT the application to be deployed to GitHub Pages.
