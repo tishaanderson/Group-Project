@@ -35,10 +35,13 @@ THEN I can enhance my meal prep by trying new and diverse recipes
 
 https://github.com/tishaanderson/Group-Project
 
+https://tishaanderson.github.io/TasteBudsUnite/
+
 
 
 ###### Demo
 
+<video src="DeployedProject.mp4" controls title="Title"></video>
 
 ###### APIs
 
