@@ -4,6 +4,7 @@ const textBox = document.querySelector("#textBox");
 const searchHistory = document.querySelector("#keyword-list");
 const cuisines = document.querySelector("#cuisineOptions");
 const mealType = document.querySelector("#mealType");
+const searchForm = document.querySelector("#searchForm");
 
 
 const apiKey = "a1db763ce0894faf95a8510b5764d7ae";
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('select');
   var instances = M.FormSelect.init(elems);
 });
+
 
 function updateSearchHistory(keyword) {
   const listItem = document.createElement("li");
@@ -33,9 +35,7 @@ function updateSearchHistory(keyword) {
   searchHistory.appendChild(listItem);
 }
 
-
-function searchRecipes(event) {
-  event.preventDefault();
+function searchRecipes() {
   searchGiphy()
   recipeResults.innerHTML = '';
   query = textBox.value;
@@ -133,6 +133,13 @@ function searchActualRecipe(recipeID) {
     });
 }
 
+
+searchForm.addEventListener("submit", function (event){
+    event.preventDefault();    
+    searchRecipes();
+  
+});
+
 function searchGiphy() {
   const apiKey = 'n8TQ0Jng6MCQ7aU7EY3wa7cdBlkCiazf'; 
   const searchQuery = document.getElementById('textBox').value;
@@ -156,5 +163,4 @@ function searchGiphy() {
       .catch((error) => console.error(error));
 }
 
-searchButton.addEventListener("click", searchRecipes);
 

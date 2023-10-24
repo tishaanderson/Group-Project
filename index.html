@@ -22,12 +22,11 @@
     </header>
     <nav>
       <div class="nav-wrapper teal darken-4">
-        <form style="width: 150px"class="search-form left">
+        <form style="width: 150px"class="search-form left" id="searchForm">
           <div class="input-field text">
             <input id="textBox" type="text" placeholder="Search Recipes" />
           </div>
-        </form>
-        <button
+          <button
           id="searchButton"
           class="btn waves-effect waves-light"
           type="submit"
@@ -35,6 +34,8 @@
         >
           Search
         </button>
+        </form>
+        
         
         <div style="width:150px;" class="input-field cuisineOptions">
           <select id="cuisineOptions">
