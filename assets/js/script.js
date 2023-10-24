@@ -13,7 +13,6 @@ let query = "text";
 let cuisine = "text";
 let wine = "select"
 
-
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('select');
   var instances = M.FormSelect.init(elems);
@@ -37,8 +36,6 @@ function updateSearchHistory(keyword) {
   listItem.textContent = uppercaseKeyword;
   searchHistory.appendChild(listItem);
 }
-
-
 
 function searchRecipes(event) {
   event.preventDefault();
@@ -145,10 +142,7 @@ function searchWines(event) {
 
       wineResults.appendChild(wineDescription)
 })
-
 }
-
-
 
 function loadSearchHistory() {
   const keywords = JSON.parse(localStorage.getItem("searchKeywords")) || [];
@@ -175,7 +169,6 @@ function searchActualRecipe(recipeID) {
       console.error("An error occurred:", error);
     });
 }
-
 
 // searchForm.addEventListener("submit", function (event){
 //     event.preventDefault();    
