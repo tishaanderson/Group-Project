@@ -5,12 +5,8 @@ const textBox = document.querySelector("#textBox");
 const searchHistory = document.querySelector("#keyword-list");
 const cuisines = document.querySelector("#cuisineOptions");
 const mealType = document.querySelector("#mealType");
-
 const wineType = document.querySelector("#wineType")
-
 const searchForm = document.querySelector("#searchForm");
-
-
 
 const apiKey = "a1db763ce0894faf95a8510b5764d7ae";
 let query = "text";
@@ -23,9 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.FormSelect.init(elems);
 });
 
-
 wineType.addEventListener("change", searchWines)
-
 
 function updateSearchHistory(keyword) {
   const listItem = document.createElement("li");
@@ -35,7 +29,6 @@ function updateSearchHistory(keyword) {
   
 }
 
-//adding function to save previous searched keywords and from previous visits to the page
 window.addEventListener("load", loadSearchHistory);
 
 function updateSearchHistory(keyword) {
@@ -49,8 +42,6 @@ function updateSearchHistory(keyword) {
 
 function searchRecipes(event) {
   event.preventDefault();
-function searchRecipes() {
-
   searchGiphy()
   recipeResults.innerHTML = '';
   query = textBox.value;
@@ -186,10 +177,10 @@ function searchActualRecipe(recipeID) {
 }
 
 
-searchForm.addEventListener("submit", function (event){
-    event.preventDefault();    
-    searchRecipes();
-  
+// searchForm.addEventListener("submit", function (event){
+//     event.preventDefault();    
+//     searchRecipes();
+//   })
 
 function searchGiphy() {
   const apiKey = 'n8TQ0Jng6MCQ7aU7EY3wa7cdBlkCiazf'; 
@@ -201,6 +192,7 @@ function searchGiphy() {
       .then((data) => {
           const gifsDiv = document.getElementById('gifs');
           gifsDiv.innerHTML = '';
+
           if (data.data.length > 0) {
               const gif = data.data[0];
               const gifImage = document.createElement('img');
@@ -212,7 +204,4 @@ function searchGiphy() {
       })
       .catch((error) => console.error(error));
 }
-
-
-git 
-
+searchButton.addEventListener("click", searchRecipes);
