@@ -36,6 +36,7 @@ function updateSearchHistory(keyword) {
 
 function searchRecipes(event) {
   event.preventDefault();
+  searchGiphy()
   recipeResults.innerHTML = '';
   query = textBox.value;
   cuisine = cuisines.value
@@ -132,5 +133,24 @@ function searchActualRecipe(recipeID) {
     });
 }
 
+function searchGiphy() {
+  const apiKey = 'n8TQ0Jng6MCQ7aU7EY3wa7cdBlkCiazf'; 
+  const searchQuery = document.getElementById('textBox').value;
+  const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchQuery}`;
+
+  fetch(endpoint)
+      .then((response) => response.json())
+      .then((data) => {
+          const gifsDiv = document.getElementById('gifs');
+          gifsDiv.innerHTML = '';
+
+          data.data.forEach((gif) => {
+              const gifImage = document.createElement('img');
+              gifImage.src = gif.images.fixed_height.url;
+              gifsDiv.appendChild(gifImage);
+          });
+      })
+      .catch((error) => console.error(error));
+}
 searchButton.addEventListener("click", searchRecipes);
 
