@@ -5,7 +5,11 @@ const textBox = document.querySelector("#textBox");
 const searchHistory = document.querySelector("#keyword-list");
 const cuisines = document.querySelector("#cuisineOptions");
 const mealType = document.querySelector("#mealType");
+
 const wineType = document.querySelector("#wineType")
+
+const searchForm = document.querySelector("#searchForm");
+
 
 
 const apiKey = "a1db763ce0894faf95a8510b5764d7ae";
@@ -19,7 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.FormSelect.init(elems);
 });
 
+
 wineType.addEventListener("change", searchWines)
+
 
 function updateSearchHistory(keyword) {
   const listItem = document.createElement("li");
@@ -40,8 +46,11 @@ function updateSearchHistory(keyword) {
 }
 
 
+
 function searchRecipes(event) {
   event.preventDefault();
+function searchRecipes() {
+
   searchGiphy()
   recipeResults.innerHTML = '';
   query = textBox.value;
@@ -176,6 +185,12 @@ function searchActualRecipe(recipeID) {
     });
 }
 
+
+searchForm.addEventListener("submit", function (event){
+    event.preventDefault();    
+    searchRecipes();
+  
+
 function searchGiphy() {
   const apiKey = 'n8TQ0Jng6MCQ7aU7EY3wa7cdBlkCiazf'; 
   const searchQuery = document.getElementById('textBox').value;
@@ -186,13 +201,18 @@ function searchGiphy() {
       .then((data) => {
           const gifsDiv = document.getElementById('gifs');
           gifsDiv.innerHTML = '';
-
-          data.data.forEach((gif) => {
+          if (data.data.length > 0) {
+              const gif = data.data[0];
               const gifImage = document.createElement('img');
               gifImage.src = gif.images.fixed_height.url;
               gifsDiv.appendChild(gifImage);
-          });
+          } else {
+              gifsDiv.innerHTML = 'No GIFs found for your search.';
+          }
       })
       .catch((error) => console.error(error));
 }
-searchButton.addEventListener("click", searchRecipes);
+
+
+git 
+
