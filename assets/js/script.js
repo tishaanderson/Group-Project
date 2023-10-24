@@ -144,13 +144,17 @@ function searchGiphy() {
           const gifsDiv = document.getElementById('gifs');
           gifsDiv.innerHTML = '';
 
-          data.data.forEach((gif) => {
+          if (data.data.length > 0) {
+              const gif = data.data[0];
               const gifImage = document.createElement('img');
               gifImage.src = gif.images.fixed_height.url;
               gifsDiv.appendChild(gifImage);
-          });
+          } else {
+              gifsDiv.innerHTML = 'No GIFs found for your search.';
+          }
       })
       .catch((error) => console.error(error));
 }
+
 searchButton.addEventListener("click", searchRecipes);
 
