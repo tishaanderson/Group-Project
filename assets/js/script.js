@@ -1,19 +1,25 @@
 const searchButton = document.querySelector("#searchButton");
 const recipeResults = document.querySelector("#recipeResults");
+const wineResults = document.querySelector("#wineResults")
 const textBox = document.querySelector("#textBox");
 const searchHistory = document.querySelector("#keyword-list");
 const cuisines = document.querySelector("#cuisineOptions");
 const mealType = document.querySelector("#mealType");
+const wineType = document.querySelector("#wineType")
 
 
 const apiKey = "a1db763ce0894faf95a8510b5764d7ae";
 let query = "text";
 let cuisine = "text";
+let wine = "select"
+
 
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('select');
   var instances = M.FormSelect.init(elems);
 });
+
+wineType.addEventListener("change", searchWines)
 
 function updateSearchHistory(keyword) {
   const listItem = document.createElement("li");
@@ -36,6 +42,7 @@ function updateSearchHistory(keyword) {
 
 function searchRecipes(event) {
   event.preventDefault();
+  searchGiphy()
   recipeResults.innerHTML = '';
   query = textBox.value;
   cuisine = cuisines.value
@@ -106,6 +113,43 @@ function searchRecipes(event) {
     });
 }
 
+function searchWines(event) {
+  event.preventDefault();
+  wineResults.innerHTML = '';
+  wineSelect = wineType.value;
+  console.log(wineSelect)
+
+  const url = `https://api.spoonacular.com/food/wine/dishes?wine=${wineSelect}&apiKey=${apiKey}`
+  fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then((responseData) => {
+      console.log(responseData)
+      const wines = responseData.results;
+        const wineDiv = document.createElement("div");
+        wineDiv.classList.add("card");
+
+   
+
+        const wineTitle = document.createElement("span");
+        wineTitle.classList.add("card-title");
+
+        const wineContent = document.createElement("div");
+        wineContent.classList.add("card-content");
+        
+
+        wineTitle.textContent = wine.title;
+        const wineDescription = document.createElement("p")
+        wineDescription.textContent = responseData.text
+
+      wineResults.appendChild(wineDescription)
+})
+
+}
+
+
+
 function loadSearchHistory() {
   const keywords = JSON.parse(localStorage.getItem("searchKeywords")) || [];
   keywords.forEach((keyword) => {
@@ -132,5 +176,23 @@ function searchActualRecipe(recipeID) {
     });
 }
 
-searchButton.addEventListener("click", searchRecipes);
+function searchGiphy() {
+  const apiKey = 'n8TQ0Jng6MCQ7aU7EY3wa7cdBlkCiazf'; 
+  const searchQuery = document.getElementById('textBox').value;
+  const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchQuery}`;
 
+  fetch(endpoint)
+      .then((response) => response.json())
+      .then((data) => {
+          const gifsDiv = document.getElementById('gifs');
+          gifsDiv.innerHTML = '';
+
+          data.data.forEach((gif) => {
+              const gifImage = document.createElement('img');
+              gifImage.src = gif.images.fixed_height.url;
+              gifsDiv.appendChild(gifImage);
+          });
+      })
+      .catch((error) => console.error(error));
+}
+searchButton.addEventListener("click", searchRecipes);
