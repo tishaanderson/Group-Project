@@ -97,3 +97,13 @@ body{
     top: 15px;
     left: 525px;
 }
+#gifs {
+    position: fixed;
+    top: 90%; /* Vertical center */
+    right: 0; /* Right side of the screen */
+    transform: translateY(-50%); /* Center vertically */
+    background-color: #ffffff; /* Background color */
+    padding: 20px; /* Padding for spacing */
+    border: 1px solid #000000; /* Border (customize as needed) */
+    z-index: 1000; /* Adjust z-index to control its stacking order */
+}
