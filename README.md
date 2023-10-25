@@ -31,18 +31,42 @@ THEN I can enhance my meal prep by trying new and diverse recipes
 ```
 
 
+##### Screenshot
+![Taste Buds Unite demo](https://user-images.githubusercontent.com/143395836/277847750-3ba6aa99-b7e5-4ec9-bd2c-733c2f910f8f.png)
 ##### Links
 
-https://github.com/tishaanderson/Group-Project
+[Original TBU github](https://github.com/tishaanderson/Group-Project)
 
-https://tishaanderson.github.io/TasteBudsUnite/
+[Taste Buds Unite](https://tishaanderson.github.io/TasteBudsUnite/)
 
 
+## Preview
 
-###### Demo
+```python
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('select');
+  var instances = M.FormSelect.init(elems);
+});
 
-<video src="DeployedProject.mp4" controls title="Title"></video>
+wineType.addEventListener("change", searchWines)
 
+function updateSearchHistory(keyword) {
+  const listItem = document.createElement("li");
+  const uppercaseKeyword = keyword.toUpperCase();
+  listItem.textContent = uppercaseKeyword;
+  searchHistory.appendChild(listItem);
+  
+}
+
+window.addEventListener("load", loadSearchHistory);
+
+function updateSearchHistory(keyword) {
+  const listItem = document.createElement("li");
+  const uppercaseKeyword = keyword.toUpperCase();
+  listItem.textContent = uppercaseKeyword;
+  searchHistory.appendChild(listItem);
+}
+```
 ###### APIs
 
 https://spoonacular.com/food-api/docs
