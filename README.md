@@ -41,7 +41,7 @@ https://tishaanderson.github.io/TasteBudsUnite/
 
 ###### Demo
 
-<video src="DeployedProject.mp4" controls title="Title"></video>
+![Live Page Screenshot](./assets/Images/image.png)
 
 ###### APIs
 
